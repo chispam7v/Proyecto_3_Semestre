@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
+    <link href="https://fonts.cdnfonts.com/css/pamela" rel="stylesheet">
+    <title>Pagina De Mati</title>
+</head>
+<body>
+  
+    <div style="margin:24px;">
+   <nav class="navbar navbar-light" style="background-color: #b24588;">
+        <div class="container">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+           <li>
+        <a href="video.html">Video</a>
+    </li>
+          <li>
+        <a href="calculadora.html">Calculadora</a>
+    </li>
+    <li>
+        <a href="calculadorafisica.html">CalculadoraFisica</a>
+    </li>
+    <li>
+    <a href="perfil.html">Perfil</a>
+    </li>
+     <li>
+    <a href="movies.html">Movies</a>
+    </li>
+     <li>
+    <a href="cuestionario.html">Cuestionario</a>
+    </li>
+  </ul>
+</div>
+</nav>
+<style>
+.quiz-container{
+  background-color: #fded83;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px black;
+  width: 600px;
+  overflow: hidden;
+}
+
+.quiz-header{
+  padding: 1.5rem;
+}
+h2{
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+ul li{
+  font-size: 16px
+  margin: 10px 0;
+}
+ul li label{
+  cursor: pointer;
+}
+button{
+  background-color: #4A4E69;
+  color: white;
+  border: none;
+  display: block;
+  width: 100px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Neilston', sans-serif;
+  padding: 15px;                                
+}
+button:hover{
+  background-color: #B4ADEA;
+
+}
+button:focus{
+  outline: none;
+  background-color: #363457;
+}
+
+  </style>
+
+
+
+<div class="container">
+  <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <div class="image-container">
+        <center><img src="goku4.jpg" alt="Imagen" id="question-image" style="width: 350px; height: 280px;"></center>
+
+
+
+
+
+      </div>
+
+
+
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer"
+          id="a" class="answer">
+          <label for="a" id="a_text">Question</label>
+        </li>
+
+          <li>
+          <input type="radio" name="answer"
+          id="b" class="answer">
+          <label for="b" id="b_text">Question</label>
+        </li>
+
+             <li>
+          <input type="radio" name="answer"
+          id="c" class="answer">
+          <label for="c" id="c_text">Question</label>
+        </li>
+
+              <li>
+          <input type="radio" name="answer"
+          id="d" class="answer">
+          <label for="d" id="d_text">Question</label>
+        </li>
+      </ul>
+    </div>
+<button id="submit">Go</button>
+  </div>
+</div>
+<script>
+  //
+  const quizData = [
+
+{
+  question: "1. ¿Quien es el personaje más rapido de Dragon ball?",
+  image: "goku1.jpg",
+  a:" Guldo",
+  b:"Burter ",
+  c:"El Gran Sacerdote de Zenón",
+  d:"Hit",
+  correct: "c",
+
+  },
+
+
+{
+  question: "2. ¿Quien abandono a su hijo como tu papi contigo?",
+  image: "goku2.jpg",
+  a:"Cell",
+  b:"Goku",
+  c:"Bills",
+  d:"Vegeta",
+  correct: "d",
+
+  },
+
+{
+  question: "3. ¿Quien es el personaje más aburrido de Dragon ball?",
+  image: "goku3.jpg",
+  a:"Jiren",
+  b:"Burter",
+  c:"Hit",
+  d:"Bill",
+  correct: "a",
+
+  },
+
+  {
+  question: "4. ¿Quien es el personaje mas divertido de Dragon ball?",
+  image: "goku4.jpg",
+  a:"Bills",
+  b:"Mr Satan",
+  c:"Majin Buu",
+  d:"Maestro Roshi",
+  correct: "d",
+  },
+
+    {
+  question: "5. Como se llama la raza de freezer?",
+  image: "goku5.jpg",
+  a:"Frezzerde",
+  b:"Demonios del frio",
+  c:"Vegeta",
+  d:"Namek",
+  correct: "b",
+  },
+
+  {
+  question: "6. ¿Como se llaman los pendientes con los que se fusionan goku y vegeta",
+  image: "goku6.jpg",
+  a:"Pendientes normales",
+  b:"Pendientes del poder",
+  c:"Pendientes de fusion",
+  d:"Pendientes de pothara",
+  correct: "d",
+  },
+
+    {
+  question: "7. ¿Quien es el papá de vegeta?",
+  image: "goku7.jpg",
+  a:"El que era rey del planeta vegeta",
+  b:"Tarble",
+  c:"Bardock",
+  d:"Turles",
+  correct: "a",
+  },
+
+    {
+  question: "8. ¿Por qué alejaron a broly de goku?",
+  image: "goku8.jpg",
+  a:"Porque goku le pegaba",
+  b:"Porque con el llanto de goku se hacia mas fuerte",
+  c:"Para que no llorara",
+  d:"Porque si",
+  correct: "b",
+  },
+
+    {
+  question: "9. ¿Cual es una fase de defensa?",
+  image: "goku9.jpg",
+  a:"Super sayayin 1",
+  b:"Ultrainstinto",
+  c:"Super sayayin dios",
+  d:"face blue",
+  correct: "b",
+  },
+
+    {
+  question: "10. ¿Por qué surgieron las esferas de dragon malvadas?",
+  image: "goku10.jpg",
+  a:"Por la maldad que estaba dentro",
+  b:"Porque se trozaron",
+  c:"Porque se murio el que las creó",
+  d:"Porque no las buscaron y se contaminaron",
+  correct: "a",
+  },
+
+    {
+  question: "11. ¿Quién mató a freezer?",
+  image: "goku11.jpg",
+  a:"Gohan",
+  b:"Trunks",
+  c:"Goku",
+  d:"Piccolo",
+  correct: "c",
+  },
+
+    {
+  question: "12. ¿Por qué Turle se parece mucho a goku?",
+  image: "goku12.jpg",
+  a:"Porque son hermanos",
+  b:"Porque son primos",
+  c:"Son parientes",
+  d:"Porque ambos son guerreros de clase baja",
+  correct: "d",
+  },
+
+    {
+  question: "13. ¿Cuantas fases tiene Cell?",
+  image: "goku13.jpg",
+  a:"9",
+  b:"5",
+  c:"4",
+  d:"15",
+  correct: "c",
+  },
+
+    {
+  question: "14. ¿Cuando Goku conoció a Bulma éste le dijo que tenía 14 años, aunque parecía demasiado pequeño para esa edad. ¿Con cuántos años participó en el 21º Torneo de las Artes Marciales?",
+  image: "goku14.jpg",
+  a:"19",
+  b:"21",
+  c:"12",
+  d:"15",
+  correct: "c",
+  },
+
+    {
+  question: "15. ¿Es bastante frecuente que los saiyans se hagan cicatrices en el cuerpo dado su estilo de vida. De hecho, ¿dónde tiene Goku su cicatriz?",
+  image: "goku15.jpg",
+  a:"En su cabeza",
+  b:"En su espalda",
+  c:"En su trasero",
+  d:"En su pie derecho",
+  correct: "a",
+  },
+
+    {
+  question: "16. ¿Bardock, el padre de Goku, ha calado estupendamente entre los fans de Dragon Ball. Pero ¿cómo se llama la madre de Goku?",
+  image: "goku16.jpg",
+  a:"Apple",
+  b:"Selypar",
+  c:"Nuts",
+  d:"Gine",
+  correct: "d",
+  },
+
+    {
+  question: "17. ¿Cuántos juegos ha desarrollado Ark System Works Basados en Dragón Ball?",
+  image: "goku17.jpg",
+  a:"1, Dragon Ball Fighter Z",
+  b:"2, las dos entregas de Dragon Ball Xenoverse",
+  c:"4, contando con la saga Supersonic Warriors",
+  d:"Ninguna",
+  correct: "c",
+  },
+
+    {
+  question: "18. ¿En qué consiste el método de entrenamiento del Duende Tortuga?",
+  image: "18.jpg",
+  a:"Moverse mucho y divertirse mucho",
+  b:"Estudiar mucho",
+  c:"Comer mucho y descansar mucho",
+  d:"Todas son verdaderas",
+  correct: "d",
+  },
+
+  {
+  question: "19. ¿Cuál es el primer premio de la categoría infantil del 25º Gran Torneo de las artes marciales?",
+  image: "goku19.jpg",
+  a:"Combatir contra Mr. Satan",
+  b:"Combatir contra Mr. Satan y 500,000 zenis",
+  c:"Combatir contra Mr. Satan y un millon de zenis",
+  d:"Combatir contra Mr. Satan y 10 millones de zenis",
+  correct: "d",
+  },
+
+    {
+  question: "20. ¿La raza de los saiyan es fascinante y dispone de habilidades únicas. ¿Cuál de los siguientes no es un rasgo característico de los saiyans de pura sangre?",
+  image: "goku20.jpg",
+  a:"Se vuelven mas fuertes tras cada combate",
+  b:"Nacen con cola, aunque es su punto debil",
+  c:"Nunca les cambia el cabello",
+  d:"Tienen una juventud extraordinariamnete larga",
+  correct: "a",
+  },
+
+  ];
+
+/*Las respuestas correctas son:
+1.c 2.d 3.a 4.d 5.b 6.d 7.a 8.b 9.b 10.a 11.c 12.d 13.c 14.c 15.a 16.d 17.c 18.d 19.d 20.a*/
+
+  const quiz = document.getElementById('quiz');
+  const answerEls = document.querySelectorAll('.answer');
+  const questionEl = document.getElementById('question');
+  const a_text = document.getElementById('a_text');
+  const b_text = document.getElementById('b_text');
+  const c_text = document.getElementById('c_text');
+  const d_text = document.getElementById('d_text');
+  const submitBtn = document.getElementById('submit');
+ 
+ let currentQuiz = 0;
+ let score = 0;
+ loadQuiz();
+
+ function loadQuiz(){
+  deselectAnswers();
+  const currentQuizData = quizData[currentQuiz];
+  questionEl.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+
+const questionImage = document.getElementById("question-image");
+questionImage.src = currentQuizData.image;
+
+ }
+
+ function deselectAnswers(){
+ answerEls.forEach(answerEl => answerEl.checked = false); 
+ }
+
+ function getSelected(){
+  let answer;
+
+  answerEls.forEach(answerEl => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+ }
+
+ submitBtn.addEventListener('click', () => {
+  const answer = getSelected();
+
+  if (answer){
+    if (answer === quizData[currentQuiz].correct){
+      score++;
+    }
+
+    currentQuiz++;
+    if(currentQuiz < quizData.length){
+      loadQuiz()
+    } else {
+      quiz.innerHTML = `
+      <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente</h2>
+
+      <button onclick="location.reload()">Repetir</button>
+      `
+    }
+  }
+ })
+
+</script>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contáctame!!!</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de las siguientes redes sociales:</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+          <a href="http://www.linkedin.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  //Con lo siguiente hare que los links de las paginas se abran mediante javascript en un pagina nueva
+const socialnetworks = document.querySelectorAll('.contact-links a');
+socialnetworks.forEach(link =>{
+  link.addEventListener('click', e =>{
+    e.preventDefault();
+    window.open(link.href, '_blank');
+  });
+});
+</script>
+</footer>
+</body>
+</html>
